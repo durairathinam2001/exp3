@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="style.css">
+<title>Student Registration Form</title> <script type = "text/javascript">
+function validate() { if( document.myForm.FirstName.value == "" ) { alert( "Please provide your Firstname!" ); document.myForm.FirstName.focus() ; return false; } if( document.myForm.LastName.value == "" ) { alert( "Please provide your Lastname!" ); document.myForm.LastName.focus() ; return false; } if( document.myForm.EmailID.value == "" ) { alert( "Please provide your Email ID!" ); document.myForm.EmailID.focus() ; return false; } if( document.myForm.MobileNumber.value == "") { alert( "Please provide your valid mobile number!" ); document.myForm.MobileNumber.focus() ;
+return false; } if( document.myForm.Gender.value == "" ) { alert( "Please select any Gender!" ); document.myForm.Gender.focus() ; return false; } if( document.myForm.date.value == "" ) { alert( "Please select your data of birth!" ); document.myForm.date.focus() ; return false; } if( document.myForm.Address.value == "" ) { alert( "Please provide your address!" ); document.myForm.Address.focus() ; return false; } if( document.myForm.City.value == "" ) { alert( "Please provide your city name!" ); document.myForm.City.focus() ; return false; } if( document.myForm.Pincode.value == ""  ) { alert( "Please provide your pincode!" ); document.myForm.Pincode.focus() ; return false; } if( document.myForm.State.value == "" ) { alert( "Please provide your state!" ); document.myForm.State.focus() ; return false; } if( document.myForm.course.value == "-1" ) { alert( "Please select your course" ); document.myForm.course.focus() ; return false;
+}
+return( true );
+}
+</script> <style> ul { animation-fill-mode: forwards; list-style-type: none;
+margin: 10px; width: 200px; padding: 5; overflow: hidden; background-color: #8adefd;
+}
+li { float: left;
+}
+li a, .dropbtn { display: inline-block; color: rgb(245, 23, 23); text-align: center; padding: 14px 16px; text-decoration: none;
+} li a:hover, .dropdown:hover .dropbtn { background-color:white;
+} li.dropdown { display: inline-block;
+}
+.dropdown-content { display: none; position: absolute; background-color: #f9f9f9; min-width: 160px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); z-index: 1;
+}
+.dropdown-content a { color: rgb(112, 56, 244); padding: 12px 16px; text-decoration: none; display: block; text-align: left;
+}
+.dropdown-content a:hover {background-color: #f1f1f1;}
+.dropdown:hover .dropdown-content { display: block; } h2{ font-family: 'Times New Roman', Times, serif; font-size: 24px;
+font-style: normal; font-weight: bold; color: rgb(255, 123, 0); text-align: center; text-decoration:dotted
+}
+table.inner{ border: 10px } input[type=text], input[type=email], input[type=number]{ width: 50%; padding: 6px 12px; margin: 5px 0;
+} input[type=submit], input[type=reset]{ width: 15%; padding: 8px 12px; margin: 5px 0;
+}
+</style>
+</head>
+<body>
+<h2>Student Registration Form </h2>
+<form action = "/cgi-bin/test.cgi" name = "myForm" onsubmit = "return(validate());">
+<table align="center" cellpadding = "10">
+<td>
+<ul>
+<li><a href="#home">Home</a></li>
+<li class="dropdown">
+<a href="javascript:void(0)" class="dropbtn">Dropdown</a>
+<div class="dropdown-content">
+<a href="#">First graduate</a>
+<a href="#">not a first graduate</a>
+</div>
+</li>
+</ul>
+</td>
+<tr>
+<td>First Name</td>
+<td><input type="text" name="FirstName" maxlength="50" placeholder="Seeta" />
+</td>
+</tr>
+<tr>
+<td>Last Name</td>
+<td><input type="text" name="LastName" maxlength="50" placeholder="Ram"/>
+</td>
+</tr>
+<tr>
+<td>Email ID</td>
+<td><input type="email" name="EmailID" maxlength="100" placeholder="seetaram@gmail.com"/></td>
+</tr>
+<tr>
+<td>Mobile Number</td>
+<td>
+<input type="text" name="MobileNumber" maxlength="10" placeholder="+91xxxxxx"/>
+</td>
+</tr>
+<tr>
+<td>Gender</td>
+<td>
+<input type="radio" name="Gender" value="Male" />
+Male
+<input type="radio" name="Gender" value="Female" />
+Female
+</td>
+</tr>
+<tr>
+<td>Date of Birth</td>
+<td>
+<input type="date" id="DOB" name="date">
+</td>
+</tr>
+<tr>
+<td>Address<br /><br /><br /></td>
+<td><textarea name="Address" rows="5" cols="50"></textarea></td>
+</tr>
+<tr>
+<td>City</td>
+<td><input type="text" name="City" maxlength="50" placeholder="Erode"/>
+</td>
+</tr>
+<tr>
+<td>Pin Code</td>
+<td><input type="Number" name="PinCode" maxlength="6" placeholder="637287"/>
+</td>
+</tr>
+<tr>
+<td>State</td>
+<td><input type="text" name="State" maxlength="50" placeholder="Tamil Nadu"/>
+</td>
+</tr>
+<tr>
+<td>Courses<br />Applied For</td>
+<td>
+<select id="course" name="course">
+<option value="-1" selected>B.Com(Bachelor of Commerce) </option>
+<option value="CourseBA">BA(Bachelor of Arts)</option>
+<option value="CourseBCA">BCA(Bachelor of Computer Applications) </option>
+<option value="CourseMA">MA(Master of Arts)</option>
+<option value="CourseBSc">B.Sc(Bachelor of Science) </option>
+<option value="CourseBMSc">M.Sc(Master of Science) </option>
+<option value="CourseMCA">MCA(Master of Computer Applications) </option>
+</select>
+</td>
+</tr>
+<tr>
+<td colspan="2" align="center">
+<input type="submit" value="Submit">
+<input type="reset" value="Reset">
+</td>
+</tr>
+</table> </form>
+</body>
+</html>
